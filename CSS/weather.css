@@ -672,8 +672,8 @@ body {
     --search-button-color:rgba(167, 100, 0, 0.3); 
   }
   body {
-    overflow: hidden; 
-    position: fixed; 
+    overflow: auto; 
+    position: static; 
   }
   .mobile-section{
     height: 100vh;
