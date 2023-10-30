@@ -48,7 +48,7 @@ document.getElementById("btn-search").addEventListener("click", () => {
 
 let setAllDataByLocation = async (location) => {
   try {
-    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${location}&days=5`);
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${location}&days=3`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -63,7 +63,7 @@ let setAllDataByLocation = async (location) => {
 
 let setAllDataByCoordinate= async (latitude,longitude) => {
   try {
-    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${latitude},${longitude}&days=5`);
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${latitude},${longitude}&days=3`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -94,7 +94,7 @@ let setAllDataByCoordinate= async (latitude,longitude) => {
     document.getElementById("sunrise").innerHTML = `${to24HourFormat(data.forecast.forecastday[0].astro.sunrise)}`;
     document.getElementById("sunset").innerHTML = `${to24HourFormat(data.forecast.forecastday[0].astro.sunset)}`;
 
-    document.getElementById("fh-card-container").innerHTML = fhCardGenerator(data.forecast.forecastday, 4);
+    document.getElementById("fh-card-container").innerHTML = fhCardGenerator(data.forecast.forecastday, 3);
     injectToChart(data.forecast.forecastday[0].hour, 8);
 
   }
